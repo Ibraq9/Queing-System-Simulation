@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QS Simulation</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <div id="title-project">
+        <h1>Queing System Simulation</h1>
+    </div>
+
+    <section id="all-card-container">
+        <section id="main-section">
+            <div class="card" id="Multi-QS-Card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div style="display: flex; justify-content: center; padding: 20% 0;">
+                            <div>
+                                <h1 style="font-size: 40px;">Multi Server</h1>
+                                <h3>Queing System</h3>
+                            </div>
+                        </div>
+                        <div>
+                            <img style="width: 100%; height: 36vh;" src="imagies/s.png" />
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="container">
+
+                            <div id="serviceTimeModal" class="modal">
+                                <div class="modal-content">
+                                    <h2>Add New Customer</h2>
+                                    <div class="input-group">
+                                        <label for="serviceTime">Service Time (minutes):</label>
+                                        <input type="number" id="serviceTime" min="1" max="60" value="2">
+                                    </div>
+                                    <div class="modal-buttons">
+                                        <button class="btn btn-primary" onclick="confirmAddCustomer()">Add
+                                            Customer</button>
+                                        <button class="btn btn-danger" onclick="closeServiceTimeModal()">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="header">
+                                <h1>Queue Management System</h1>
+                            </div>
+
+                            <div class="setup-container">
+                                <div class="setup-form">
+                                    <div class="input-group">
+                                        <label for="cashierCount">Number of Servers:</label>
+                                        <input type="number" id="cashierCount" min="1" max="10" value="2">
+                                    </div>
+                                    <button class="btn btn-secondary" onclick="initializeSystem()">
+                                        <i class="fa-solid fa-play"></i>
+                                        Initialize System
+                                    </button>
+                                </div>
+                                <div id="errorMessage" class="error-message"></div>
+                            </div>
+
+
+                            <div class="controls">
+                                <button class="btn btn-primary" onclick="addCustomer()" id="addCustomerBtn" disabled>
+                                    <i class="fa-solid fa-plus"></i>
+                                    Add New Customer
+                                </button>
+                                <button class="btn btn-success" onclick="generateExcel()" id="generateExcelBtn"
+                                    disabled>
+                                    <i class="fas fa-file-excel"></i> Export to Excel
+                                </button>
+                                <button class="btn btn-danger" id="generateChartBtn" disabled>
+                                    <i class="fa-solid fa-chart-simple"></i>
+                                    Generate Chart
+                                </button>
+
+                            </div>
+
+                            <div id="cashiersContainer" class="cashiers-container">
+                                <!-- Cashiers will be added here dynamically -->
+                            </div>
+
+                            <div class="queue-container">
+                                <h2>Current Queue</h2>
+                                <ul class="queue-list" id="queueList">
+                                    <!-- Queue items will be added here dynamically -->
+                                </ul>
+                            </div>
+
+                            <div class="stats">
+                                <div class="stat-card">
+                                    <h3>Total Customers</h3>
+                                    <div class="stat-value" id="totalCustomers">0</div>
+                                </div>
+                                <div class="stat-card">
+                                    <h3>Average Wait Time</h3>
+                                    <div class="stat-value" id="avgWaitTime">0 min</div>
+                                </div>
+                                <div class="stat-card">
+                                    <h3>Queue Length</h3>
+                                    <div class="stat-value" id="queueLength">0</div>
+                                </div>
+                                <div class="stat-card">
+                                    <h3>Active Server</h3>
+                                    <div class="stat-value" id="activeCashiers">0</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Close Button (initially hidden) -->
+                <button class="close-btn" id="close-multi-card"><i class="fa-regular fa-circle-xmark"></i></button>
+            </div>
+
+            <!-- <div class="card" id="Single-QS-Card"> -->
+            <div class="card hidden" id="Single-QS-Card">
+
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div style="display: flex; justify-content: center; padding: 20% 0;">
+                            <div>
+                                <h1 style="font-size: 40px;">Chart Diagram</h1>
+                                <h3>Queing System</h3>
+                            </div>
+                        </div>
+                        <div>
+                            <img style="width: 100%; height: 36vh;" src="imagies/chart2.avif" />
+                        </div>
+                    </div>
+
+                    <div class="card-back">
+                        <div id="single-back" style="width: 100%; height: 100%;">
+                            <canvas id="chartCanvas" width="400" height="180"></canvas>
+                        </div>
+
+                        <!-- Close Button (initially hidden) -->
+                        <button class="close-btn" id="close-single-card"><i
+                                class="fa-regular fa-circle-xmark"></i></button>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+        </section>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+
+</html>
