@@ -7,9 +7,9 @@
 body {
     min-height: 95vh;
     width: 100%;
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
     background-color: rgb(243, 239, 239);
 }
 
@@ -429,31 +429,10 @@ p,h1,h2,h3{
 
 
 
-#all-card-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-#title-project{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 70px;
-}
-
-
-
-
 @media (max-width:800px){
 
-    .card , .card-front,.card-back{
-        width: 100%;
-    }
-
+    
     #main-section{
-        width: 100%;
+        width: 80%;
     }
 }
