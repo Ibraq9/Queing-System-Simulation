@@ -430,9 +430,103 @@ p,h1,h2,h3{
 
 
 @media (max-width:800px){
-
     
     #main-section{
         width: 80%;
+    }
+}
+
+
+
+
+
+@media (max-width:500px){
+    
+    #main-section{        
+        width: 100%;
+        height: 70%;
+       flex-direction: column;
+    }
+
+    .card{
+        width: 80%;
+    }
+
+    .card:hover{
+        width: 90%;
+    }
+}
+
+
+@media (min-width:501px) and (max-width:700px){
+    
+    #main-section{        
+        width: 100%;
+        height: 70%;
+       flex-direction: column;
+    }
+
+    .card{
+        width: 65%;
+    }
+
+    .card:hover{
+        width: 70%;
+    }
+}
+
+
+
+@media (min-width:701px) and (max-width:900px){
+    
+    #main-section{        
+        width: 100%;
+        height: 100%;
+    }
+
+    .card{
+        width: 60%;
+    }
+
+    .card:hover{
+        width: 70%;
+    }
+}
+
+
+
+@media (min-width:901px) and (max-width:1100px){
+    
+    #main-section{        
+        width: 90%;
+        height: 100%;
+    }
+
+    .card{
+        width: 70%;
+    }
+
+    .card:hover{
+        width: 80%;
+    }
+}
+
+
+
+
+
+@media (min-width:1101px) and (max-width:1300px){
+    
+    #main-section{        
+        width: 90%;
+        height: 100%;
+    }
+
+    .card{
+        width: 65%;
+    }
+
+    .card:hover{
+        width: 75%;
     }
 }
